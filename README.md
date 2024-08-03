@@ -96,6 +96,8 @@ CMD ["nginx", "-g", "daemon off;"]
      - `-p 8080:8080`: Maps port 8080 of the host to port 8080 of the container.
      - `-P`: Publishes all exposed ports to random ports on the host.
      - `manga-v1`: Specifies the image to use for creating the container.
+       ![Docker Setup](image/build-version.png)
+
 
 This setup effectively uses Nginx to serve static content from a Git repository, with Docker managing the containerization and deployment.
 
