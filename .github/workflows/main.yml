@@ -21,7 +21,9 @@ jobs:
       - name: build image
         run: docker build -t manga-web-image .
       - name: push images
-        run: docker image push omkara25/manga-web-image:latest
+        run: |
+          docker tag manga-web-image omkara25/manga-web-image:latest
+          docker image push omkara25/manga-web-image:latest
           
         
         
