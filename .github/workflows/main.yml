@@ -14,10 +14,14 @@ jobs:
         run:  mkdir -p Project-Data
       - name: show list of directory
         run: ls
-      - name: Docker Setup Docker
-        uses: docker/setup-docker-action@v4.1.0
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v6.10.0
+      - name: docker login
+        run: docker login -u omkara25 -p 182503@#Om
       - name: build image
         run: docker build -t manga-web-image .
+      - name: push images
+        run: docker image push manga-web-image
           
         
         
