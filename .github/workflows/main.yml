@@ -14,6 +14,13 @@ jobs:
         run:  mkdir -p Project-Data
       - name: show list of directory
         run: ls
+      - name: Docker Setup Docker
+        uses: docker/setup-docker-action@v4.1.0
+      - name: build image
+        run: docker build -t manga-web-image .
+          
+        
+        
 
     
 
