@@ -2,6 +2,8 @@ FROM nginx
 
 WORKDIR /usr/share/nginx/html
 
+#WORKDIR /app
+
 RUN apt-get update && \
     apt-get install git -y && \
     rm -rf  * && \
