@@ -13,7 +13,7 @@ jobs:
       - name: Build and push Docker images
         uses: docker/build-push-action@v6.10.0
       - name: docker login
-        run: docker login -u omkara25 -p 182503@#Om
+        run: docker login -u {} -p {}
       - name: build image
         run: docker build -t manga-web-image .
       - name: push images
