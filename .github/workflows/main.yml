@@ -10,10 +10,6 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4.2.2
-      - name: make dirctory
-        run:  mkdir -p Project-Data
-      - name: show list of directory
-        run: ls
       - name: Build and push Docker images
         uses: docker/build-push-action@v6.10.0
       - name: docker login
