@@ -11,9 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
-      - name: Docker Setup Docker
-        uses: docker/setup-docker-action@v2
-      - name: Docker login
-        run: echo "${{ secrets.USERNAME }}"
+      - name: docker login
+        run: echo "My secret is ${{ secrets.USERNAME }}"
       - name: Verify Docker version
         run: docker --version
