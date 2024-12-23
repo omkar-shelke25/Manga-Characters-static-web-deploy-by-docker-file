@@ -16,7 +16,7 @@ jobs:
         with:
           args: |
             -Dsonar.projectKey=omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file
-            -Dsonar.organization=omkar-shelke25
+            -Dsonar.organization=omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file
             -Dsonar.host.url=https://sonarcloud.i
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
