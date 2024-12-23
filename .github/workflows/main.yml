@@ -11,13 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6.10.0
-        with:
-          context: .
-          push: true
-          tags: omkara25/manga-web-image:latest
-        env:
-          DOCKER_LOGIN: ${{ secrets.DOCKERLOGIN }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}
+      - name: Docker Setup Docker
+        uses: docker/setup-docker-action@v4
+      - name: docker login
+        run: docker login -u ${{ secrets.DOCKERLOGIN }} -p ${{ secrets.DOCKERPASSWORD }}
