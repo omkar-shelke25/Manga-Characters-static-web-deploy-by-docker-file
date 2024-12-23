@@ -14,6 +14,6 @@ jobs:
       - name: Docker Setup Docker
         uses: docker/setup-docker-action@v2
       - name: Docker login
-        run: echo "${{ secrets.DOCKERPASSWORD }}"
+        run: echo "${{ vars.DOCKERPASSWORD }}"
       - name: Verify Docker version
         run: docker --version
