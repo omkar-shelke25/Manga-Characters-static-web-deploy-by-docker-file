@@ -11,7 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
-      - name: docker login
-        run: echo "My secret is ${{ secrets.USERNAME }}"
-      - name: Verify Docker version
-        run: docker --version
+      - name: Use environment variables
+        run: |
+          echo "PASSWORD is ${{ secrets.PASSWORD }}"
+          echo "SONAR token is ${{ secrets.SONAR }}"
+          echo "USERNAME is ${{ secrets.USERNAME }}"
