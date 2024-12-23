@@ -11,12 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.2
-      - name: static analysis
+      
+      - name: Set up SonarCloud Scanner
         uses: SonarSource/sonarqube-scan-action@v4.2.1
         with:
-          args: |
-            -Dsonar.projectKey=omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file
-            -Dsonar.organization=omkar-shelke25
-            -Dsonar.host.url=https://sonarcloud.i
+          sonar.projectKey: omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file  # Replace with your actual project key
+          sonar.organization: omkar-shelke25  # Replace with your actual organization key
+          sonar.host.url: https://sonarcloud.io
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Make sure the token is set in your secrets
