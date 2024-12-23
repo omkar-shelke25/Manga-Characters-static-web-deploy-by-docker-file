@@ -17,8 +17,9 @@ jobs:
         with:
           scannerVersion: '6.2.1.4610'  # Specify the version of the SonarScanner you want to use
           args: |
-            -Dsonar.projectKey=omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file  # Replace with your actual project key
+            -Dsonar.projectKey=omkar-shelke25:Manga-Characters-static-web-deploy-by-docker-file  # Format with colon
             -Dsonar.organization=omkar-shelke25  # Replace with your actual organization key
             -Dsonar.host.url=https://sonarcloud.io
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}  # Explicitly set the login (token)
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Make sure the token is set in your secrets
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Ensure the token is set in your secrets
