@@ -4,26 +4,20 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - name: checkout code
+      - name: Checkout code
         uses: actions/checkout@v4.2.2
-      - name: Build and push Docker images
+
+      - name: Build and push Docker image
         uses: docker/build-push-action@v6.10.0
-      - name: docker login
-        run: echo "${{ secrets.DOCKERPASSWORD }}" | docker login -u "${{ secrets.DOCKERLOGIN }}" --password-stdin
-      - name: build image
-        run: docker build -t manga-web-image .
-      - name: push images
-        run: |
-          docker tag manga-web-image omkara25/manga-web-image:latest
-          docker image push omkara25/manga-web-image:latest
-          
-        
-        
-
-    
-
-      
+        with:
+          context: .
+          push: true
+          tags: omkara25/manga-web-image:latest
+        env:
+          DOCKER_LOGIN: ${{ secrets.DOCKERLOGIN }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERPASSWORD }}
