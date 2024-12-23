@@ -14,11 +14,9 @@ jobs:
       - name: static analysis
         uses: SonarSource/sonarqube-scan-action@v4.2.1
         with:
-          sonar.projectKey: omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file
-          sonar.organization: omkar-shelke25
-          sonar.host.url: https://sonarcloud.io
+          args: |
+            -Dsonar.projectKey=omkar-shelke25_Manga-Characters-static-web-deploy-by-docker-file
+            -Dsonar.organization=omkar-shelke25
+            -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
-  
-
